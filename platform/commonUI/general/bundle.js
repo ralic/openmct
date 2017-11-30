@@ -34,7 +34,6 @@ define([
     "./src/controllers/ContextMenuController",
     "./src/controllers/ClickAwayController",
     "./src/controllers/ViewSwitcherController",
-    "./src/controllers/BottomBarController",
     "./src/controllers/GetterSetterController",
     "./src/controllers/SelectorController",
     "./src/controllers/ObjectInspectorController",
@@ -48,6 +47,7 @@ define([
     "./src/directives/MCTSplitPane",
     "./src/directives/MCTSplitter",
     "./src/directives/MCTTree",
+    "./src/directives/MCTIndicators",
     "./src/filters/ReverseFilter",
     "text!./res/templates/bottombar.html",
     "text!./res/templates/controls/action-button.html",
@@ -83,7 +83,6 @@ define([
     ContextMenuController,
     ClickAwayController,
     ViewSwitcherController,
-    BottomBarController,
     GetterSetterController,
     SelectorController,
     ObjectInspectorController,
@@ -97,6 +96,7 @@ define([
     MCTSplitPane,
     MCTSplitter,
     MCTTree,
+    MCTIndicators,
     ReverseFilter,
     bottombarTemplate,
     actionButtonTemplate,
@@ -274,13 +274,6 @@ define([
                     ]
                 },
                 {
-                    "key": "BottomBarController",
-                    "implementation": BottomBarController,
-                    "depends": [
-                        "indicators[]"
-                    ]
-                },
-                {
                     "key": "GetterSetterController",
                     "implementation": GetterSetterController,
                     "depends": [
@@ -386,6 +379,11 @@ define([
                     "key": "mctTree",
                     "implementation": MCTTree,
                     "depends": ['gestureService']
+                },
+                {
+                    "key": "mctIndicators",
+                    "implementation": MCTIndicators,
+                    "depends": ['openmct']
                 }
             ],
             "constants": [
